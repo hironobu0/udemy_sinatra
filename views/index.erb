@@ -7,10 +7,38 @@
   </head>
   <body>
     <h1>これはErbで書きました</h1>
-    <a href="about.html">このサービスについて</a>
-    <a href="/contact_new">連絡先の新規作成</a>
+
+    <div class="">
+      <a href="/contact_new">連絡先の新規作成</a>
+    </div>
+
+    <div class="">
+      <!-- 表を作成 -->
+      <table border = "1">
+        <!-- テーブルのヘッダー -->
+        <thead>
+          <!-- 横の１行 -->
+          <tr>
+            <!-- 見出し -->
+            <th>ID</th>
+            <th>名前</th>
+          </tr>
+        </thead>
+        <!-- テーブルのボディ -->
+        <tbody>
+          <% @contacts.each do |contact| %>
+            <tr>
+              <!-- データセル -->
+              <td><%=contact.id %></td>
+              <td><%=contact.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
     <footer>
+      <a href="about.html">このサービスについて</a>
       <p>今の時刻は：<%= @now %> </p>
     </footer>
   </body>

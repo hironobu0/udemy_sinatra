@@ -8,6 +8,20 @@
 
   <body>
     <h1>新しい連絡先</h1>
+
+    <!--present?:nilのときにfalseを返す -->
+    <% if @contact.errors.present? %>
+      エラーがあります。
+      <!--・リストを作成 -->
+      <ul>
+          <!-- エラーメッセージを表示 -->
+          <% @contact.errors.full_messages.each do |message| %>
+          <!-- li:リストアイテム -->
+          <li><%= message %></li>
+          <% end %>
+      </ul>
+    <% end %>
+
     <form  action="contacts" method="post">
       <input type="text" name="name">
       <input type="submit">
