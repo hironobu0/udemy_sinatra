@@ -22,8 +22,21 @@
       </ul>
     <% end %>
 
+    <!-- フォームに名前を入れて/contactsに送信 -->
     <form  action="contacts" method="post">
-      <input type="text" name="name">
+      <div class="">
+        <label for="contact_name">名前</label>
+        <input type="text" name="input_name" id="contact_name" value = "<%= @contact.name%>" >
+      </div>
+
+      <div class="">
+        <label for="contact_email">Email</label>
+        <input type="text" name="input_email" id="contact_email"value = "<%= @contacts.name %>" >
+      </div>
+
+      <!-- テキストボックスを作成 -->
+
+
       <input type="submit">
     </form>
 

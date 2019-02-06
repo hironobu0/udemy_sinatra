@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="/style.css ">
   </head>
   <body>
-    <h1>これはErbで書きました</h1>
+    <h1>連絡帳</h1>
+
+    <% if @message %>
+      <div class="message">
+        <%= @message %>
+      </div>
+    <% end %>
 
     <div class="">
       <a href="/contact_new">連絡先の新規作成</a>
@@ -22,6 +28,7 @@
             <!-- 見出し -->
             <th>ID</th>
             <th>名前</th>
+            <th>Email</th>
           </tr>
         </thead>
         <!-- テーブルのボディ -->
@@ -31,6 +38,7 @@
               <!-- データセル -->
               <td><%=contact.id %></td>
               <td><%=contact.name %></td>
+              <td><%=contact.email %></td>
             </tr>
           <% end %>
         </tbody>
